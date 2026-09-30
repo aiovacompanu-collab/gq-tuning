@@ -15,22 +15,3 @@
 .form-success{display:none;margin:0;color:#8fe0a1;font-size:11px}.form-success.show{display:block}
 .contact-actions .btn.secondary{cursor:pointer}
 @media(max-width:760px){.contact-actions{width:100%}.contact-actions .btn{flex:1}}
-
-/* Right-edge quick booking panel */
-.edge-zone{position:fixed;z-index:60;right:0;top:20%;width:18px;height:60%;background:transparent}
-.edge-zone:after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:3px;height:92px;background:var(--red);box-shadow:0 0 18px rgba(255,39,34,.35);opacity:.7;transition:.25s}
-.edge-zone:hover:after{height:135px;opacity:1}
-.quick-booking{position:fixed;z-index:70;right:0;top:0;height:100%;width:min(430px,92vw);padding:34px 30px;background:rgba(8,10,12,.97);border-left:1px solid rgba(255,39,34,.35);box-shadow:-24px 0 70px rgba(0,0,0,.55);transform:translateX(105%);transition:transform .42s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(14px);overflow:auto}
-.quick-booking.open{transform:translateX(0)}
-.quick-booking-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-top:48px}
-.quick-booking-head h3{font-size:40px;line-height:.95;letter-spacing:-.05em;margin:8px 0 0}
-.quick-booking-head button{width:42px;height:42px;border:1px solid var(--line);background:transparent;font-size:25px;color:#aaa}
-.quick-booking>p{max-width:330px;color:#858a8f;font-size:12px;line-height:1.65;margin:20px 0 28px}
-.quick-booking form{display:flex;flex-direction:column;gap:14px}
-.quick-booking label{display:flex;flex-direction:column;gap:7px;color:#858a8f;font-size:9px;text-transform:uppercase;letter-spacing:.13em}
-.quick-booking input,.quick-booking textarea{border:1px solid #272b2f;background:#050607;padding:13px 14px;outline:none}
-.quick-booking input:focus,.quick-booking textarea:focus{border-color:var(--red)}
-.quick-booking .btn{width:100%;justify-content:space-between;margin-top:4px}
-.quick-success{display:none;color:#8fe0a1;font-size:11px;line-height:1.5}
-.quick-success.show{display:block}
-@media(max-width:760px){.edge-zone{display:none}.quick-booking{width:100%;padding:24px 20px}.quick-booking-head{margin-top:36px}.quick-booking-head h3{font-size:34px}}

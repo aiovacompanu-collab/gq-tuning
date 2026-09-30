@@ -34,31 +34,3 @@ function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hi
 document.querySelector('#openBooking').addEventListener('click',openModal);document.querySelector('#openBooking2').addEventListener('click',openModal);document.querySelectorAll('[data-close-modal]').forEach(x=>x.addEventListener('click',closeModal));
 document.querySelector('#bookingForm').addEventListener('submit',e=>{e.preventDefault();e.currentTarget.reset();document.querySelector('#formSuccess').classList.add('show')});
 showPage(location.hash.slice(1)||'home',false);renderWork();
-
-// Right-edge hover booking panel
-const quickBooking=document.querySelector('#quickBooking');
-const edgeZone=document.querySelector('.edge-zone');
-const quickClose=document.querySelector('#quickClose');
-const quickForm=document.querySelector('#quickBookingForm');
-const quickSuccess=document.querySelector('#quickSuccess');
-let quickCloseTimer;
-function openQuickBooking(){
-  clearTimeout(quickCloseTimer);
-  quickBooking.classList.add('open');
-  quickBooking.setAttribute('aria-hidden','false');
-}
-function scheduleQuickClose(){
-  clearTimeout(quickCloseTimer);
-  quickCloseTimer=setTimeout(()=>{
-    if(!quickBooking.matches(':hover') && !edgeZone.matches(':hover')){
-      quickBooking.classList.remove('open');
-      quickBooking.setAttribute('aria-hidden','true');
-    }
-  },220);
-}
-edgeZone.addEventListener('mouseenter',openQuickBooking);
-edgeZone.addEventListener('mouseleave',scheduleQuickClose);
-quickBooking.addEventListener('mouseenter',()=>clearTimeout(quickCloseTimer));
-quickBooking.addEventListener('mouseleave',scheduleQuickClose);
-quickClose.addEventListener('click',()=>{quickBooking.classList.remove('open');quickBooking.setAttribute('aria-hidden','true')});
-quickForm.addEventListener('submit',e=>{e.preventDefault();quickForm.reset();quickSuccess.classList.add('show')});
